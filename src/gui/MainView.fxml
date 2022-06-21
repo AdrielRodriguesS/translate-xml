@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
    <content>
-      <VBox prefHeight="357.0" prefWidth="598.0">
+      <VBox prefHeight="371.0" prefWidth="598.0">
          <children>
-            <Label text="Documento para importação:">
+            <Label text="Document for import">
                <VBox.margin>
                   <Insets left="20.0" top="20.0" />
                </VBox.margin>
@@ -23,7 +23,7 @@
             </Label>
             <HBox prefHeight="40.0" prefWidth="598.0">
                <children>
-                  <TextField fx:id="txtArchiveName" prefHeight="26.0" prefWidth="500.0">
+                  <TextField fx:id="txtArchiveName" maxHeight="26.0" maxWidth="500.0" prefHeight="26.0" prefWidth="500.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -31,7 +31,7 @@
                         <Insets left="20.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="btSearchArchive" maxHeight="26.0" maxWidth="70.0" mnemonicParsing="false" onAction="#onBtSearchArquiveAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #1e90ff;" text="Browse">
+                  <Button fx:id="btSearchArchive" maxHeight="26.0" maxWidth="70.0" mnemonicParsing="false" onAction="#onBtSearchArquiveAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #a9a9a9;" text="Browse">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
@@ -48,6 +48,71 @@
                <font>
                   <Font name="Corbel Bold" size="13.0" />
                </font>
+            </Button>
+            <Label text="Number">
+               <VBox.margin>
+                  <Insets left="20.0" top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Corbel" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNumber" maxHeight="20.0" maxWidth="300.0">
+               <VBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Corbel" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="Description">
+               <font>
+                  <Font name="Corbel" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtDescription" maxWidth="450.0">
+               <VBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Path to save">
+               <font>
+                  <Font name="Corbel" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="25.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="38.0" prefWidth="598.0">
+               <children>
+                  <TextField fx:id="txtPathToSave" maxHeight="26.0" maxWidth="500.0" prefHeight="26.0" prefWidth="500.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="20.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="btSearchPath" maxHeight="26.0" maxWidth="70.0" mnemonicParsing="false" onAction="#onBtSearchPathAction" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #a9a9a9;" text="Browse">
+                     <font>
+                        <Font name="Corbel Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="btCreateXml" mnemonicParsing="false" onAction="#onBtCreateXmlAction" prefWidth="150.0" style="-fx-background-color: #00008b;" text="Create XML File" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </VBox.margin>
             </Button>
          </children>
       </VBox>

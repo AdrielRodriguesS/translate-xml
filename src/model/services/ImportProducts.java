@@ -11,11 +11,11 @@ import entities.Product;
 import gui.MainViewController;
 import javafx.scene.control.TextField;
 
-public class ImportProducts {	
+public class ImportProducts {
+	
+	private static List<Product> products = new ArrayList<>();	
 
-	public void readFile(TextField txtArchiveName) {
-		
-		List<Product> products = new ArrayList<>();		
+	public void readFile(TextField txtArchiveName) {	
 			
 			try (BufferedReader br = new BufferedReader(new FileReader(txtArchiveName.getText()))){
 				
@@ -37,7 +37,11 @@ public class ImportProducts {
 		
 		for(Product p : products) {
 		System.out.println(p);
-		}	
-	}	
+		}
+	}
+	
+	public static List<Product> getProductList() {
+		return products;
+	}
 	
 }
