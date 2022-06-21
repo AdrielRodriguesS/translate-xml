@@ -60,10 +60,8 @@ public class MainViewController {
 		}
 	
 	@FXML
-	public void onBtSearchPathAction(ActionEvent event) {
-		
-		Stage parentStage = currentStage(event);
-		
+	public void onBtSearchPathAction() {
+				
 		final JFileChooser fc = new JFileChooser();
 		fc.showOpenDialog(fc);
 		fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
