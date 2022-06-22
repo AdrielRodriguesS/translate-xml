@@ -9,7 +9,9 @@ import java.util.List;
 
 import entities.Product;
 import gui.MainViewController;
+import gui.util.Alerts;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ImportProducts {
 	
@@ -31,13 +33,12 @@ public class ImportProducts {
 					line = br.readLine();
 				}
 				
+				Alerts.showAlert("Import .csv file", null, 
+						"Success to Import!\nWas imported " + products.size() + " products!", AlertType.INFORMATION);
+				
 			} catch (IOException e) {
-					System.out.println("Error reading file: " + e.getMessage());
-			}
-		
-		for(Product p : products) {
-		System.out.println(p);
-		}
+				Alerts.showAlert("ERROR!", null, "Error to import .csv file", AlertType.ERROR);
+			}		
 	}
 	
 	public static List<Product> getProductList() {

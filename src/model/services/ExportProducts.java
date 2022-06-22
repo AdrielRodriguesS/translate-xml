@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.Product;
+import gui.util.Alerts;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class ExportProducts {
 
@@ -43,9 +45,11 @@ public class ExportProducts {
 							+ "</FOCCOINTEGRADOR>";
 
 			bw.write(archieve);
+			
+			Alerts.showAlert("Success", null, "A new file was created!", AlertType.INFORMATION);
 
 		} catch(IOException e) {
-			e.printStackTrace();
+			Alerts.showAlert("ERROR", null, "Error to create a .xml file", AlertType.ERROR);
 		}	
 	}
 }

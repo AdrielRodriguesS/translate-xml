@@ -4,11 +4,14 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
+import gui.util.Alerts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.services.ExportProducts;
@@ -38,7 +41,13 @@ public class MainViewController {
 	private Button btSearchPath;
 	
 	@FXML
-	private Button btCreateXml;	
+	private Button btCreateXml;
+	
+	@FXML
+	private Label txtArchiveNameEmpty;
+	
+	@FXML
+	private Label txtPathToSaveEmpty;
 	
 	@FXML
 	public void onBtSearchArquiveAction(ActionEvent event){
@@ -49,15 +58,24 @@ public class MainViewController {
 		File file = fileChooser.showOpenDialog(parentStage);
 		
 		if(file != null) {
-			txtArchiveName.setText(file.getAbsolutePath());			
+			txtArchiveName.setText(file.getAbsolutePath());
+			txtArchiveNameEmpty.setText("");
 		}
 	}
 	
 	@FXML
 	public void onBtImportAction(){
-		ImportProducts ip = new ImportProducts();
-		ip.readFile(txtArchiveName);	
+		
+		if(txtArchiveName.getText() == null || txtArchiveName.getText().trim().equals("")) {			
+		
+			txtArchiveNameEmpty.setText("Field can't be Empty!!");	
 		}
+		else {
+			ImportProducts ip = new ImportProducts();
+			ip.readFile(txtArchiveName);
+			txtArchiveNameEmpty.setText("");
+		}
+	}
 	
 	@FXML
 	public void onBtSearchPathAction() {
@@ -69,13 +87,22 @@ public class MainViewController {
 		
 		if(file != null) {		
 		txtPathToSave.setText(file.getAbsolutePath());
+		txtPathToSaveEmpty.setText("");
 		}
 	}
 	
 	@FXML
 	public void onBtCreateXmlAction() {
-		ExportProducts ep = new ExportProducts();
-		ep.createXml(txtPathToSave, txtNumber, txtDescription);
+		
+		if(txtPathToSave.getText() == null || txtPathToSave.getText().trim().equals("")) {		
+			
+			txtPathToSaveEmpty.setText("Field can't be Empty!!");	
+		}		
+		else {		
+			ExportProducts ep = new ExportProducts();
+			ep.createXml(txtPathToSave, txtNumber, txtDescription);
+			txtPathToSaveEmpty.setText("");			
+		}
 	}
 	
 	//return the stage to use in the FileChooser

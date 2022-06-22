@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
    <content>
-      <VBox prefHeight="371.0" prefWidth="598.0">
+      <VBox prefHeight="398.0" prefWidth="598.0">
          <children>
             <Label text="Document for import">
                <VBox.margin>
@@ -41,14 +41,26 @@
                   </Button>
                </children>
             </HBox>
-            <Button fx:id="btImport" mnemonicParsing="false" onAction="#onBtImportAction" prefWidth="80.0" style="-fx-background-color: #b22222;" text="Import" textFill="WHITE">
-               <VBox.margin>
-                  <Insets left="20.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="Corbel Bold" size="13.0" />
-               </font>
-            </Button>
+            <HBox prefHeight="37.0" prefWidth="598.0">
+               <children>
+                  <Button fx:id="btImport" maxHeight="25.0" maxWidth="80.0" mnemonicParsing="false" onAction="#onBtImportAction" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #b22222;" text="Import" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="txtArchiveNameEmpty" maxHeight="25.0" maxWidth="400.0" prefHeight="25.0" prefWidth="400.0" textFill="RED">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
             <Label text="Number">
                <VBox.margin>
                   <Insets left="20.0" top="25.0" />
@@ -106,14 +118,26 @@
                   </Button>
                </children>
             </HBox>
-            <Button fx:id="btCreateXml" mnemonicParsing="false" onAction="#onBtCreateXmlAction" prefWidth="150.0" style="-fx-background-color: #00008b;" text="Create XML File" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="15.0" />
-               </font>
-               <VBox.margin>
-                  <Insets left="20.0" top="15.0" />
-               </VBox.margin>
-            </Button>
+            <HBox prefHeight="70.0" prefWidth="598.0">
+               <children>
+                  <Button fx:id="btCreateXml" maxHeight="30.0" maxWidth="150.0" mnemonicParsing="false" onAction="#onBtCreateXmlAction" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #00008b;" text="Create XML File" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="txtPathToSaveEmpty" maxHeight="30.0" maxWidth="330.0" prefHeight="30.0" prefWidth="330.0" textFill="RED">
+                     <font>
+                        <Font name="Corbel Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </content>
